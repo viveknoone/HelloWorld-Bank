@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelloWorld Bank | Transactions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <div class="container">
+      <h2>Sent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount (₹)</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="sentBody">
+        </tbody>
+      </table>
+
+      <h2>Received Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount (₹)</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="receivedBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let currentUsername = null;
+
+    async function fetchCurrentUser() {
+      const res = await fetch('/current-user');
+      if (!res.ok) {
+        alert("Please login again");
+        return;
+      }
+      const data = await res.json();
+      currentUsername = data.username;
+    }
+
+    async function loadTransactions() {
+      await fetchCurrentUser();
+
+      const res = await fetch("/transactions-data");
+      const transactions = await res.json();
+
+      const sentBody = document.getElementById("sentBody");
+      const receivedBody = document.getElementById("receivedBody");
+
+      transactions.forEach(tx => {
+        const row = `
+          <tr>
+            <td>${tx.from}</td>
+            <td>${tx.to}</td>
+            <td>₹${tx.amount}</td>
+            <td>${new Date(tx.timestamp).toLocaleString()}</td>
+          </tr>
+        `;
+
+        if (tx.from === currentUsername) {
+          sentBody.innerHTML += row;
+        } else if (tx.to === currentUsername) {
+          receivedBody.innerHTML += row;
+        }
+      });
+    }
+
+    window.onload = loadTransactions;
+  </script>
+</body>
+
+</html>

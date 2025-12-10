@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HelloWorld Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="logo">
+                <img id="logo" src="properties/helloworld_logo-removebg-.png">
+            </div>
+        <div class="container">
+            <div class="login-form">
+                <form class="login" action="/login" method="POST">
+                    <label for="username">Username:</label><br /><br>
+                    <input class="value" type="text" id="username" name="username" required><br /><br />
+
+                    <label for="password">Password:</label><br /><br>
+                    <div class="password-flex">
+                        <input class="value" type="password" id="password" name="password" required>
+                        <img class="closedEye show-password" src="/properties/closedEye.jpg" alt="toggle icon"
+                            onclick="showPassword('#password', this)">
+                        </img>
+                    </div><br>
+
+                    <input class="form-btn" id="login-btn" type="submit" value="Login">
+                    <a class="btn-text" href="/ForgotPassword.html"> forgot password?</a>
+                </form>
+            </div>
+            <div class="registration">
+                <p>New to Bank? <a class="btn-text" href="/RegistrationForm.html">Create an account</a></p>
+            </div>
+            <button class="btn" id="back-btn" onclick="window.location.href='Home.html'"> Back to home</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

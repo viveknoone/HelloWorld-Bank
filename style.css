@@ -1,0 +1,640 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    color: #000;
+    font-family: Product Sans, helvetica, arial, sans-serif;
+    height: 100%;
+    letter-spacing: 0;
+    background-color: #FFFFC5;
+}
+
+#desktop-navbar {
+    /* position: fixed; */
+    /* margin-top: 7px; */
+    height: 8vh;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+#space{
+    width: 2vw;
+}
+
+#title {
+    width: 20vw;
+    height: 10vh;
+}
+
+#logo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+#navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links {
+    font-size: 20px;
+    font-weight: 549;
+    letter-spacing: 0;
+    padding: 10px;
+    color: #121212;
+    transition: all 300ms ease;
+}
+
+.navbar-links:hover {
+    font-size: 22px;
+    text-decoration: underline;
+    color: grey;
+}
+
+/* ticker */
+.ticker-wrap {
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    /* Hides the text outside the viewable area */
+    white-space: nowrap;
+    /* Keeps all content on a single line */
+    box-sizing: border-box;
+    background-color: #fadc41;
+    /* Example bank blue background */
+    color: black;
+    padding: 8px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* 2. Content Styles and Animation */
+.ticker-content {
+    display: inline-block;
+    /* Allows the content to move left/right */
+    padding-left: 100%;
+    /* Starts the text off-screen to the right */
+    animation: scroll-left 45s linear infinite;
+    /* Adjust time for speed */
+}
+
+/* 3. Animation Definition */
+@keyframes scroll-left {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    /* Start position: Off-screen right */
+    100% {
+        transform: translate(-100%, 0);
+    }
+
+    /* End position: Off-screen left */
+}
+
+/* 4. Formatting the individual items (optional, but good practice) */
+.ticker-item {
+    display: inline-block;
+    margin-right: 50px;
+    /* Space between items */
+}
+
+/* Optional: Color for positive/negative change */
+.up {
+    color: #5cb85c;
+}
+
+/* Green */
+.down {
+    color: #d9534f;
+}
+
+/* Red */
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.banners {
+    display: flex;
+    width: 80%;
+    height: 79vh;
+    /* margin-top: 6vh; */
+    background-image: url('properties/piggyBank.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: end;
+    align-items: end;
+}
+
+.banner-text {
+    /* margin-right: 30px;
+    margin-bottom: 50px; */
+    height: 40vh;
+    width: 30vw;
+    padding: 15px;
+    background-color: #fadc41;
+}
+
+.banner-text:hover{
+    height: 41vh;
+    width: 31vw;
+    transition-duration: 1s;
+}
+
+.logo{
+    width: 20vw;
+    height: 10vh;
+    margin-bottom: 5vh;
+}
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.about-container {
+    display: flex;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-display {
+    height: 40vh;
+    /* margin: 25px; */
+}
+
+.img-display img {
+    height: 40vh;
+}
+
+
+.about-text h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.about-text h2 {
+    margin-bottom: 1rem;
+
+}
+
+.about-text p {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+#view{
+    display: block;
+    width: 8vw;
+    height: 5vh;
+    margin-top: 5vh;
+    padding-left: 2vw;
+    align-content: center;
+    background-color: white;
+}
+
+/*  Carriers */
+.careers-section {
+    max-width: 900px;
+    max-height: 85vh;
+    margin: 45px 25px 20px 20vw;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.careers-section h2 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.job-listing {
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+    background-color: #FFFFC5;
+}
+
+.job-listing:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.158);
+}
+
+.job-title {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.job-location {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.job-description {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.apply-btn {
+    padding: 10px 20px;
+    background-color: #004aad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+    background-color: #003b8a;
+}
+
+
+.btn{
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    border-width: 0;
+    border-radius: 50px;
+    padding: 10px;
+    height: 40px;
+    background-color: #fadc41;
+
+}
+
+
+button, .form-btn ,#show-transactions{
+    cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button:after, .form-btn::after, #show-transactions::after{
+  content: '\00bb';
+  color: white;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover, .form-btn:hover , #show-transactions:hover{
+  padding-right: 25px;
+}
+
+button:hover, .form-btn:after {
+  opacity: 1;
+  right: 0;
+}
+
+#login-btn {
+    width: 130px;
+}
+
+.form-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form #login-btn {
+    border-radius: 10px;
+    padding: 0;
+    height: 32px;
+    width: 100px;
+    background-color: rgb(210, 208, 208);
+}
+
+.value{
+    background-color: #FFFFC5;
+}
+#grey-btn {
+    background-color: rgb(210, 208, 208);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 60vh;
+    gap: 25px;
+    border: solid;
+    border-radius: 65px;
+    width: 65vw;
+    padding: 10px;
+}
+
+.btn-text {
+    color: blue;
+}
+
+.form-grid {
+    display: flex;
+    gap: 10vw;
+}
+
+.form-btn {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    border-width: 0;
+    border-radius: 50px;
+    padding: 10px;
+    height: 40px;
+    background-color: #fadc41;
+}
+
+#back-btn {
+    width: 180px;
+}
+
+#register-form .container {
+    height: 75vh;
+    padding: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    height: 25px;
+    width: 15vw;
+    font-size: 17px;
+    padding-left: 3px;
+    border-radius: 6px;
+}
+
+
+#checkbox {
+    height: 15px;
+    width: 15px;
+}
+
+#forgot-form .container {
+    font-size: 23px;
+    gap: 22px;
+}
+
+#email {
+    height: 30px;
+    width: 100%;
+}
+
+#forgot-code {
+    margin-left: 10vw;
+}
+
+.show-password {
+    width: 27px;
+    height: 24px;
+    margin-left: -30px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.password-flex {
+    display: flex;
+}
+
+#check-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#show-transactions{
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    border-width: 0;
+    border-radius: 50px;
+    padding: 10px;
+    height: 26px;
+    background-color: #fadc41;
+}
+
+#show-transactions:hover{
+    text-decoration: none;
+}
+
+
+#transaction-images{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 9vh;
+    width: 85vh;
+    padding-left: 5vw;
+}
+
+#image2{
+    margin-top: 10vh;
+}
+
+@media screen and (max-width: 992px) {
+    /* Adjust section margins */
+    section {
+        margin: 0 5%;
+    }
+
+    /* Adjust navbar elements */
+    #desktop-navbar {
+        height: auto;
+    }
+
+    /* Shrink the logo on smaller screens */
+    #title {
+        width: 100px;
+    }
+
+    /* Adjust navbar link size */
+    .navbar-links {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+
+    /* Banner text adjustment */
+    .banners {
+        background-size: cover;
+        min-height: 500px;
+    }
+    
+    .banner-text {
+        width: 50%;
+    }
+
+    /* About Section */
+    .about-text p {
+        font-size: 1.1rem;
+    }
+
+    /* Careers Section */
+    .careers-section {
+        margin: 45px auto 20px auto; /* Center the careers section */
+        max-width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    /* Force elements to stack vertically */
+    #desktop-navbar {
+        flex-direction: column; /* Stack logo and navigation links */
+        align-items: center;
+    }
+
+    #navbar {
+        flex-direction: column; /* Stack the nav links vertically */
+        gap: 5px; /* Reduce vertical gap */
+    }
+
+    /* Revert to single-column layout for links/buttons */
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-links {
+        font-size: 1rem;
+    }
+
+    /* Home Page Banner: Stack content */
+    .home-page {
+        min-height: auto;
+    }
+
+    .banners {
+        width: 100%;
+        min-height: 300px; /* Smaller minimum height */
+        background-size: cover;
+        background-position: top center; /* Focus on the top part of the image */
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .banner-text {
+        width: 95%; /* Almost full width on mobile */
+        height: auto;
+        padding: 10px;
+    }
+
+    /* About Section: Stack image and text */
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-display, .img-display img {
+        height: auto;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    
+    #view {
+        width: 120px;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    /* Forms (Login/Register/Forgot) */
+    .container {
+        width: 95%; /* Full width for the container */
+        padding: 10px;
+        gap: 15px; /* Reduced gap */
+        border-radius: 20px;
+        height: auto;
+        min-height: 60vh;
+    }
+
+    .form-grid {
+        flex-direction: column; /* Stack form elements */
+        gap: 20px;
+    }
+
+    input {
+        width: 80vw; /* Use percentage of viewport width for inputs */
+    }
+
+    /* Transaction Table */
+    table {
+        font-size: 0.8rem;
+        display: block; /* Make the table scrollable horizontally if needed */
+        overflow-x: auto;
+    }
+    
+    #transaction-images {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: 0;
+        margin-top: 5vh;
+    }
+
+    #transaction-images div {
+        margin-bottom: 20px;
+    }
+}

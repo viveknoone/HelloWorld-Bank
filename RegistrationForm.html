@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | HelloWorld Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="form-container" id="register-form">
+        <div class="container">
+            <form id="registrationForm" action="/register" method="POST">
+                <div class="form-grid">
+                    <div>
+                        <h2>Personal Information</h2><br>
+                        <label for="fullname">Full Name</label><br><br>
+                        <input class="value" type="text" id="fullname" name="fullname" required><br><br>
+
+                        <label for="aadhar">Aadhar no</label><br><br>
+                        <input class="value" type="tel" id="aadhar" name="aadhar" required><br><br>
+
+                        <label for="phone">Phone no</label><br><br>
+                        <input class="value" type="tel" id="phone" pattern="[6-9]{1}[0-9]{9}" name="phone" required><br><br>
+
+                        <label for="email">Email Address </label><br><br>
+                        <input class="value" type="email" id="email" name="email" required><br><br>
+
+                        <label for="dob">Date of Birth</label><br><br>
+                        <input class="value" type="date" id="dob" name="dob"><br><br>
+
+                        <label for="gender">Gender</label><br><br>
+                        <select id="gender" class="value" name="gender">
+                            <option value="">--Select--</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Credentials</h2>
+                        <br>
+                        <label for="username">Username</label><br><br>
+                        <input class="value" type="text" id="username" name="username" required><br><br>
+
+                        <label for="password">Password</label><br><br>
+                        <!-- <input type="password" id="password" name="password" required><br><br> -->
+                        <div class="password-flex">
+                            <input class="value" type="password" id="password" name="password" required>
+                            <img class="closedEye show-password" src="/properties/closedEye.jpg" alt="toggle icon"
+                                onclick="showPassword('#password', this)">
+                            </img>
+                        </div><br>
+
+                        <label for="confirmPassword">Confirm Password</label><br><br>
+                        <!-- <input type="password" id="confirmPassword" name="confirmPassword" required><br><br> -->
+                        <div class="password-flex">
+                        <input class="value" type="password"  id="confirmPassword" name="confirmPassword" required><br><br>
+                        <img  class="closedEye show-password" src="/properties/closedEye.jpg" alt="toggle icon" onclick="showPassword('#confirmPassword', this)">
+                        </img>
+                    </div><br>
+
+                        <label>
+                            <input class="value" id="checkbox" type="checkbox" name="terms" required>
+                            I agree to the <a class="btn-text" href="Home.html">Terms and Conditions</a>
+                        </label><br><br>
+
+                        <input class="form-btn" type="submit" value="Register">
+                        <input class="form-btn" id="grey-btn" type="reset" value="Reset">
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
